@@ -1,4 +1,4 @@
-const create = async (createForm) => {
+const create = async () => {
     const body = {
         nombre: $("#nombre").val(),
         precio: parseInt($("#precio").val()),
@@ -23,5 +23,5 @@ const create = async (createForm) => {
         text: "Videojuego creado exitosamente",
         showConfirmButton: false,
         timer: 1800,
-    }).then(() => window.location.href = "/index.html");
+    }).then(() => (window.location.href = "/index.html"));
 };
