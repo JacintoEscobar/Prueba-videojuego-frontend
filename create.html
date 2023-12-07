@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create</title>
+        <!--Bootstrap-->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+        <!--JQuery-->
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+            crossorigin="anonymous"
+        ></script>
+        <!--Sweetalert-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/src/css/index.css" />
+        <link rel="shortcut icon" href="/public/img/logo-title.svg" />
+    </head>
+    <body>
+        <div id="content" class="container-fluid">
+            <!--Navbar-->
+            <div id="navbar" class="container-fluid p-0"></div>
+
+            <!--Contenido principal-->
+            <div id="main" class="container m-4 p-0">
+                <form
+                    id="create-form"
+                    class="row g-3 needs-validation"
+                    novalidate
+                >
+                    <div class="col-12">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <div class="input-group has-validation">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="nombre"
+                                ,
+                                name="nombre"
+                                required
+                                minlength="1"
+                                maxlength="45"
+                            />
+                            <div class="valid-feedback">¡Perfecto!</div>
+                            <div class="invalid-feedback">Nombre inválido</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="precio" class="form-label">Precio</label>
+                        <div class="input-group has-validation">
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="precio"
+                                name="precio"
+                                required
+                                min="1"
+                                step="0.01"
+                            />
+                            <div class="valid-feedback">¡Perfecto!</div>
+                            <div class="invalid-feedback">Precio inválido</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="fabricante" class="form-label"
+                            >Fabricante</label
+                        >
+                        <div class="input-group has-validation">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="fabricante"
+                                name="fabricante"
+                                required
+                                minlength="1"
+                                maxlength="45"
+                            />
+                            <div class="valid-feedback">¡Perfecto!</div>
+                            <div class="invalid-feedback">
+                                Fabricante inválido
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button
+                            id="create-form-submit"
+                            class="btn btn-primary"
+                            type="submit"
+                        >
+                            Crear
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!--Footer-->
+            <div id="footer" class="container-fluid p-0"></div>
+        </div>
+
+        <script src="src/js/navbar.js"></script>
+        <script src="src/js/create/ready.js"></script>
+        <script src="src/js/create/validate-form.js"></script>
+        <script src="src/js/create/create.js"></script>
+    </body>
+</html>
