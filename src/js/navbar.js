@@ -3,9 +3,9 @@ $("#navbar").ready(() => {
         "public/templates/navbar.html",
         (response, status, xhr) => {
             if (status === "success") {
-                if (window.location.pathname === "/read.html") {
+                if (window.location.pathname === "/") {
                     $("div#search-form").load(
-                        "public/templates/read/form-search.html"
+                        "public/templates/form-search.html"
                     );
                 }
             }

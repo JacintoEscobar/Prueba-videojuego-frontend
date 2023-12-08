@@ -13,6 +13,11 @@ const videojuegos = async () => {
                 <td class="td-nombre" style="cursor: pointer;">${videojuego.nombre}</td>
                 <td class="td-precio" style="cursor: pointer;">$${videojuego.precio}</td>
                 <td class="td-fabricante" style="cursor: pointer;">${videojuego.fabricante}</td>
+                <td>
+                    <button class="btn btn-danger">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
             </tr>`
         )
     );
