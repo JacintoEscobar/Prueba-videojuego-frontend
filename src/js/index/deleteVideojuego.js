@@ -1,15 +1,11 @@
-const update = async () => {
-    const body = {
-        nombre: $("#nombre").val(),
-        precio: parseInt($("#precio").val()),
-        fabricante: $("#fabricante").val(),
-    };
-
+/**
+ * @param { number } idVideojuego
+ */
+const deleteVideojuego = async (idVideojuego) => {
     const response = await fetch(
-        UPDATE_URL.replace("{id}", $("#videojuego-id").val()),
+        DELETE_VIDEOJUEGO.replace("{id}", idVideojuego),
         {
-            method: "PUT",
-            body: JSON.stringify(body),
+            method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -23,7 +19,7 @@ const update = async () => {
     return Swal.fire({
         icon: "success",
         title: "Hecho!",
-        text: "Videojuego actualizado exitosamente",
+        text: "Videojuego eliminado exitosamente",
         showConfirmButton: false,
         timer: 1800,
     }).then(() => (window.location.href = "/index.html"));

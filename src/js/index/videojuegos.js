@@ -14,7 +14,7 @@ const videojuegos = async () => {
                 <td class="td-precio" style="cursor: pointer;">$${videojuego.precio}</td>
                 <td class="td-fabricante" style="cursor: pointer;">${videojuego.fabricante}</td>
                 <td>
-                    <button class="btn btn-danger">
+                    <button class="btn btn-danger delete-videojuego">
                         <i class="fa fa-trash"></i>
                     </button>
                 </td>
@@ -23,4 +23,6 @@ const videojuegos = async () => {
     );
 
     setUpdateCampos();
+
+    setDeleteVideojuego();
 };
