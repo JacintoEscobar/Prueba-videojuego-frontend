@@ -1,7 +1,7 @@
 const setVideojuegosSelect = () => {
-    $("#select-videjouego").select2({
+    $("#select-videojuego").select2({
         ajax: {
-            url: "http://localhost:8080/videojuegos",
+            url: GET_VIDEOJUEGOS,
             dataType: "json",
             processResults: (data) => {
                 const videojuegos = [];
@@ -9,12 +9,19 @@ const setVideojuegosSelect = () => {
                     videojuegos.push({
                         id: videojuego.id,
                         text: videojuego.nombre,
+                        precio: videojuego.precio,
+                        fabricante: videojuego.fabricante,
                     });
                 });
                 return {
                     results: videojuegos,
                 };
             },
+            language: "es",
         },
     });
+
+    $("#select-videojuego").on("select2:select", (e) =>
+        setVideojuegoSeleccionadoInfo(e.params.data)
+    );
 };

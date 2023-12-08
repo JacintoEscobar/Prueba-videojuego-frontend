@@ -44,9 +44,104 @@
 
             <!--Contenido principal-->
             <div id="main" class="container m-4 p-0">
-                <select id="select-videjouego" class="form-select" aria-label="Default select example">
+                <select
+                    id="select-videojuego"
+                    class="form-select"
+                    aria-label="Default select example"
+                >
                     <option selected>Selecciona un videojuego</option>
                 </select>
+
+                <div
+                    id="div-update-form"
+                    class="container-fluid mt-2"
+                    style="display: none"
+                >
+                    <form
+                        id="update-form"
+                        class="row g-3 needs-validation"
+                        novalidate
+                    >
+                        <div class="col-12">
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="videojuego-id"
+                                readonly
+                                hidden
+                            />
+                        </div>
+                        <div class="col-12">
+                            <label for="nombre" class="form-label"
+                                >Nombre</label
+                            >
+                            <div class="input-group has-validation">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="nombre"
+                                    name="nombre"
+                                    required
+                                    minlength="1"
+                                    maxlength="45"
+                                />
+                                <div class="valid-feedback">¡Perfecto!</div>
+                                <div class="invalid-feedback">
+                                    Nombre inválido
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="precio" class="form-label"
+                                >Precio</label
+                            >
+                            <div class="input-group has-validation">
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="precio"
+                                    name="precio"
+                                    required
+                                    min="1"
+                                    step="0.01"
+                                />
+                                <div class="valid-feedback">¡Perfecto!</div>
+                                <div class="invalid-feedback">
+                                    Precio inválido
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="fabricante" class="form-label"
+                                >Fabricante</label
+                            >
+                            <div class="input-group has-validation">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="fabricante"
+                                    name="fabricante"
+                                    required
+                                    minlength="1"
+                                    maxlength="45"
+                                />
+                                <div class="valid-feedback">¡Perfecto!</div>
+                                <div class="invalid-feedback">
+                                    Fabricante inválido
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button
+                                id="update-form-submit"
+                                class="btn btn-primary"
+                                type="submit"
+                            >
+                                Actualizar
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
             <!--Footer-->
@@ -56,5 +151,7 @@
         <script src="src/js/navbar.js"></script>
         <script src="src/js/update/ready.js"></script>
         <script src="src/js/update/setVideojuegosSelect.js"></script>
+        <script src="src/js/update/setVideojuegoSeleccionadoInfo.js"></script>
+        <script src="src/js/update/update.js"></script>
     </body>
 </html>
