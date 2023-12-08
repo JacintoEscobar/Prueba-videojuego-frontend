@@ -9,11 +9,13 @@ const videojuegos = async () => {
     videojuegos.forEach((videojuego, index) =>
         $("#videojuegos-table > tbody").append(
             `<tr>
-                <th scope="row">${++index}</th>
-                <td>${videojuego.nombre}</td>
+                <th scope="row">${videojuego.id}</th>
+                <td class="td-nombre" style="cursor: pointer;">${videojuego.nombre}</td>
                 <td>$${videojuego.precio}</td>
                 <td>${videojuego.fabricante}</td>
             </tr>`
         )
     );
+
+    setUpdateCampos();
 };
