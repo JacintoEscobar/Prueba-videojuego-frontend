@@ -11,8 +11,8 @@ const videojuegos = async () => {
             `<tr>
                 <th scope="row">${videojuego.id}</th>
                 <td class="td-nombre" style="cursor: pointer;">${videojuego.nombre}</td>
-                <td>$${videojuego.precio}</td>
-                <td>${videojuego.fabricante}</td>
+                <td class="td-precio" style="cursor: pointer;">$${videojuego.precio}</td>
+                <td class="td-fabricante" style="cursor: pointer;">${videojuego.fabricante}</td>
             </tr>`
         )
     );
