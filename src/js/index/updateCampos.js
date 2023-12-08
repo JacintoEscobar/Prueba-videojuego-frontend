@@ -4,23 +4,36 @@ const setUpdateCampos = () => {
     );
 };
 
+/**
+ * @param { HTMLTableCellElement } tdNombre
+ */
 const changeTdToInputNombre = (tdNombre) => {
-    // Version 2
-    const nombre = $(tdNombre).text();
-    $(tdNombre).empty();
-    $(tdNombre).append(
+    const nombre = $(tdNombre).text().trim();
+    $(tdNombre).replaceWith(
         `<input id="input-change-nombre" type="text" class="form-control form-contro-sm" value="${nombre}" style="widht: auto;" />`
     );
     $("#input-change-nombre").focus();
-    $("#input-change-nombre").blur(() => {
-        const nuevoNombre = $("#input-change-nombre").val();
-        const idVideojuego = $("#input-change-nombre").parent().prev().text();
-        $(tdNombre).text(nuevoNombre);
-        $("#input-change-nombre").remove();
-        updateCampos(nuevoNombre, idVideojuego);
+    $("#input-change-nombre").blur((e) => {
+        const nuevoNombre = e.target.value.trim();
+        const idVideojuego = parseInt($(e.target).prev().text().trim());
+
+        $(e.target).replaceWith(
+            `<td id="remplazo_nombre" class="td-nombre" style="cursor: pointer;">${nuevoNombre}</td>`
+        );
+        $("#remplazo_nombre").click((e) => changeTdToInputNombre(e.target));
+        $("#remplazo_nombre").removeAttr("id");
+
+        if (nuevoNombre !== nombre) {
+            updateCampos(nuevoNombre, idVideojuego);
+        }
     });
 };
 
+/**
+ *
+ * @param { String } nuevoNombre
+ * @param { number } idVideojuego
+ */
 const updateCampos = (nuevoNombre, idVideojuego) => {
     Swal.fire({
         icon: "info",
@@ -30,9 +43,7 @@ const updateCampos = (nuevoNombre, idVideojuego) => {
         timer: 1800,
         allowOutsideClick: false,
         allowEscapeKey: false,
-        didOpen: () => {
-            Swal.showLoading();
-        },
+        didOpen: () => Swal.showLoading(),
     });
 
     setTimeout(() => {
